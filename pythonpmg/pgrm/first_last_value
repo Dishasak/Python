@@ -1,0 +1,8 @@
+lst = ["Disha","Ankitha","Pushpaa"]
+fname = lst[0]
+lname =lst[-1]
+
+lfname = lst[1:-1]
+
+print(fname)
+print(lname)
