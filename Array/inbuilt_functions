@@ -1,0 +1,50 @@
+#looping
+
+arr =[10,30,50,20,60]
+for x in arr:
+    print(x)
+ 
+ 
+ #adding ele to the list at the last
+arr.append(40)
+print(arr)
+
+#delete the ele from the list
+arr.remove(10)
+print("remove the ele from the list",arr)
+
+#sort the ele from the 
+arr.sort()
+print("sort the ele in the list",arr)
+
+#reverse the ele in the list
+arr.reverse()
+print("the reverse list is ", arr)
+
+#removing the ele through the index value
+arr.pop(1)
+print("ele after pop",arr)
+
+#removing the ele from the list by the name
+arr.remove(30)
+print("removing the ele from the list",arr)
+
+#adding the ele in the list
+arr.insert(1,20)
+print("list",arr)
+
+#couting the number of times the ele present in the list
+x=arr.count(20)
+print("the number is present",x)
+
+arr1 =[30,40,60,80,90]
+arr.extend(arr1)
+print(arr)
+
+arr=[60, 20, 40, 20, 30, 40, 60, 80, 90]
+for x in arr:
+    if x >=2:
+        print(arr)
+if x in arr:
+    arr.remove(x)
+print(arr)
