@@ -1,0 +1,361 @@
+'''A Python dictionary is a data type for storing the data in a key-value pair format
+A dictionary is a collection which is ordered*, changeable(mutable) and do not allow duplicates.
+Dictionaries are written with curly brackets, and have keys and values:
+
+syntax: {}  considered as an empty dictionary .... set() ---> considered as a empty set
+Use {} only for empty dictionaries.
+Use set() for empty sets.'''
+
+
+
+'''A dictionary in Python is a container object including key-value pairs.
+The dict type implements a dictionary in Python.
+A dictionary cannot have duplicate keys.
+A dictionary is a mutable object but keys in the dictionary must be immutable objects.
+A dictionary can be created using curly braces or the dict() method.
+Values in the dictionary can be obtained through square bracket notation or the get() method.
+Dictionary items, keys, and values can be obtained using items(), keys(), and values() methods,respectively.
+Existing items can be modified or new items can be added to a dictionary using square brackets notation or the update() method.
+Items can be removed from a dictionary using the del keyword or the pop() method.
+Conditional statements can be used with a dictionary to check if the dictionary contains specific keys, values, or key-value pairs.
+Looping on a dictionary can be done by iterating over keys, values, or items.
+Nested dictionaries are dictionaries that are stored as values within another dictionary.
+With dictionary comprehension, elements of an iterable object are transformed into key-value pairs.
+
+dictionary comprehension:{key_expression: value_expression for item in iterable if condition}
+
+'''
+
+
+
+#*******************************************************************
+#creation of the dictionary...
+# syntax: data = {"key":"value"}
+#*******************************************************************
+
+
+# A dictionary object can be created with initial key-value pairs using the dict() function.
+# # Creating a dictionary from a list of tuples.
+# my_list = [("apple", 2), ("banana", 3), ("orange", 4)]
+# my_dict = dict(my_list)
+# print(my_dict)
+# # Creating a dictionary using keyword arguments.
+# my_dict = dict(apple=2, banana=3, orange=4)
+# # Creating a dictionary from another dictionary.
+# old_dict = {"apple": 2, "banana": 3, "orange": 4}
+# new_dict = dict(old_dict)
+
+
+my_dict = dict({"a": 1})
+print(my_dict)
+data ={}
+data["name"]= "disha"
+data["dept"] ="CSBS"
+print(data)
+data.update({"name":"pushpa"})
+data.update({"dept":"CSE"})
+print(data)
+del data["dept"]
+print(data)
+
+
+
+#*******************************************************************
+#frequency count of the string and then converting it into the dict
+#*******************************************************************
+
+
+string_value = "This is a string"
+print(len(string_value))
+data1 ={}
+for char in string_value:
+    if char in data1:
+        data1[char]+=1
+    else:
+        data1[char]=1
+print(data1)
+
+
+#*******************************************************************
+#no of character present in the string
+#*******************************************************************
+
+string_value = "This is a string"
+characters = {}
+
+for c in string_value:
+    characters[c] = 1
+
+print(len(list(characters.keys())))
+
+
+#*******************************************************************
+#creating dict by joining two list
+#*******************************************************************
+
+keys = ['name', 'age', 'city']
+values = ['Alice', 25, 'New York']
+data = dict(zip(keys,values))
+print(data)
+sorting= sorted(data.items())
+print(sorting)
+    
+
+
+nums = [1, 2, 2, 3, 3, 3]
+data={}
+for i in nums:
+    if i in data:
+        data[i]+=1
+    else:
+        data[i] =1
+print(data)      
+
+
+#*******************************************************************
+#removes the duplicates from the dictionary
+#*******************************************************************
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'b': 3, 'c': 4}
+dict1.update(dict2)
+print(dict1)
+    
+
+data = {'a': 10, 'b': 20, 'c': 5}
+maximum = max(data.values())
+print(maximum)
+
+# check if key exist
+data = {'a': 1, 'b': 2, 'c': 3}
+data1 = data.fromkeys("b")
+print(data1)
+key = 'b'
+print(key in data)
+
+
+#*******************************************************************
+# SYNTAX FOR DICTIONARY COMPREHENSION
+# syntax:{key_expression: value_expression for element in iterable}
+#*******************************************************************
+
+
+
+input_list = [3, 5, 6, 1]
+mydict ={"even":[],"odd":[]}
+for i in input_list:
+    if i%2==1:
+        mydict["odd"].append(i)
+    else:
+        mydict["even"].append(i)
+print(mydict)
+
+
+print(dir(dict))
+
+#   **********************key to find in the dict*******************
+dict1 ={1:"a",2:"b",3:"c" ,4:"c"}
+value_to_find = "c"
+for k,v in dict1.items():
+    if v == value_to_find:
+        print(k)
+
+
+original = {'a': 1, 'b': 2, 'c': 3 ,'d':3}
+print(original)
+swapped = {v: k for k, v in original.items()}
+print(swapped)  
+
+data = {1: "a",2: "b", 3: "c"}
+print(data)
+data[4]= "d"
+print(data)
+print(dir(dict))
+data.pop(3)
+print(data)
+
+ 
+for k in data:
+    print(k)
+for v in data.values():
+    print(v)
+for k,v in data.items():
+    print(k,v)
+# ************find the string****************
+# input1 ="ABCABAABCABACCAB"
+# search1 = input1.find("CAB")
+
+# search=input1.find("CAB", search1+1)
+# search2=input1.find("CAB", search1+1)
+
+# print(search)
+# print(search1)
+# print(search2)
+
+
+
+# ***************sentence in world********************************
+import string
+
+sentence = "Hi all, my name is Tom...I am originally from India."
+input1 = 'a'
+no_punctuation = sentence.translate(str.maketrans('', '', string.punctuation+' '))
+print(dir(str))
+print( string.punctuation)
+print(no_punctuation)
+help(str.count)
+print(len(no_punctuation)//no_punctuation.count(input1))
+print(len(no_punctuation))
+
+
+# **********return the ele ****************
+list1 = [1, 2, 3, 4, 4, 5, 6, 7]
+target = 4 # target = 4
+for i in list1:
+    if target == list1[i]:
+        print(i)
+
+# nums = [1, 2, 3, 4, 4, 5, 6, 7]
+
+
+
+# ***********reverse the vowels****************
+s = "hello"
+
+vowels = 'aeiouAEIOU'
+vowel_list = [ch for ch in s if ch in vowels]  
+print(vowel_list)
+
+vowel_list.reverse()
+print(vowel_list)
+
+result = []
+vowel_index = 0
+
+for ch in s:
+    if ch in vowels:
+        result.append(vowel_list[vowel_index])  
+        vowel_index += 1
+    else:
+        result.append(ch)
+
+final_result = ''.join(result)
+print(final_result) 
+
+# *********************value of the character****************
+title ="PQ"                         #P = 16                     #Q = 17
+result =0
+for char in title:
+    value = ord(char) - ord("A")+1   #16 - 1 + 1 = 16           #17 -1+1 =17
+    # print(value)
+    result = result *26 + value      #0*26 + 16 = 16            # 16*26+17 = 433
+print(result)
+
+
+# ******************even_sum_odd_sum ********************
+list1 =[1,2,4,6,8,3,5]
+e_sum = 0
+o_sum = 0
+list2=[]
+list3=[]
+for i in list1:
+    if i % 2 == 0:
+        e_sum= e_sum+i
+        list2.append(i)
+    else:
+        o_sum = o_sum+i
+        list3.append(i)
+print(list2)
+print(e_sum)
+print(list3)
+print(o_sum)
+
+
+# # ***********Football player***********
+class Football:
+    
+    def __init__(self,name,weight,height):
+        self.name= name
+        self.weight=weight
+        self.height=height
+    
+    def get_name(self):
+        print(f"{self.name},{self.height},{self.weight} ")
+obj1 = Football("Disha",55,175)
+obj1.get_name()
+
+# *********************Basic Class with Methods***************************
+# Create a class Book with attributes title, author, and price. Add methods to:
+# Display book details.
+# Apply a discount to the price.
+
+class Book:
+    
+    def __init__(self,title,author,price):
+        self.title = title
+        self.author = author
+        self.price = price
+        
+        
+    def display(self):
+        print(f"{self.author} is the author of the book titled {self.title} and its price is {self.price}")
+        
+    def discount(self,discount):
+        after_discount = self.price-(self.price*discount)/100
+        print(f"Book after discount: {after_discount}")
+        
+    
+obj2 = Book("Python","Pushpa",2000)
+obj2.display()
+obj2.discount(10)
+
+
+
+# *****************method with the tables**************
+def table(num,length):
+    for i in range(1, length+1):
+        length = num * i
+        print(length)
+table(7,5)
+
+# **************return the letter that dont apper in the string*************
+def get_missing_letters(input_str):
+    full_alphabet = "abcdefghijklmnopqrstuvwxyz"
+    
+    missing_letters = sorted(set(full_alphabet) - set(input_str))
+    
+    return ''.join(missing_letters)
+print(get_missing_letters("abcdef"))
+
+# **************min vallue from the dictionary******************(to check)**************   
+data = {"Alice": 85, "Bob": 92, "Charlie": 88, "David": 95}
+print(v)
+print(min(v))
+
+data = {"Alice": 85, "Bob": 92, "Charlie": 88, "David": 95}
+
+
+min_value = min(data.values())
+print("Minimum value:", min_value)
+
+min_key = min(data, key=data.get)
+print("Key with the minimum value:", min_key)
+
+
+ # ********************** nested dict zipping****************************
+keys = ["A", "B", "C"]
+values = [{"Math": 90, "Science": 85}, {"Math": 75, "Science": 95}, {"Math": 88, "Science": 92}]
+data = dict(zip(keys, values))
+print(data)
+
+# *************count the word in the string*********************
+sentence = "the quick brown fox jumps over the lazy dog the fox".split()
+data ={}
+for char in sentence:
+    if char in data:
+        data[char]+=1
+    else:
+        data[char]=1
+    
+print(data)
+
+    
